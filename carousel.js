@@ -1,6 +1,15 @@
 // ------------------------------------------------------------------------------- Карусель 
 class CustomCarousel {
     constructor() {
+
+        this.carousel = document.querySelector('.custom-carousel');
+        
+        // Проверяем, существует ли карусель на странице
+        if (!this.carousel) {
+            console.log('Карусель не найдена на этой странице');
+            return;
+        }
+
         this.carousel = document.querySelector('.custom-carousel');
         this.container = document.querySelector('.carousel-container');
         this.slides = document.querySelectorAll('.carousel-slide');
@@ -14,6 +23,12 @@ class CustomCarousel {
     }
     
     init() {
+        // Дополнительная проверка на случай если элементы не найдены
+        if (!this.container || this.slides.length === 0) {
+            console.log('Элементы карусели не найдены');
+            return;
+        }
+
         this.setSlideWidth();
         this.goToSlide(0);
         this.addEventListeners();
@@ -195,6 +210,17 @@ function closeMenu() {
     document.body.style.overflow = ''; // разблокировка прокрутки
 }
 
+// Закрытие меню при клике на саму шторку
+function setupMenuClose() {
+    const sidebar = document.getElementById('sidebar');
+    
+    sidebar.addEventListener('click', function(event) {
+        // Закрываем только если кликнули непосредственно на саму шторку
+        if (event.target === sidebar) {
+            closeMenu();
+        }
+    });
+}
 
 
 
@@ -205,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // инициализация меню
     console.log('Меню и карусель инициализированы');
+
+    setupMenuClose();
     
     // закрытие меню при нажатии на Escape
     document.addEventListener('keydown', function(event) {
