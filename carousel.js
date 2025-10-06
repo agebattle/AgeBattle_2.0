@@ -219,6 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+
+    // закрытие меню при нажатии на оверлей (середину экрана)
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
 });
 
 
