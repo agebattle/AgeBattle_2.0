@@ -114,21 +114,6 @@ body {
     display: none !important;
 }
 
-/*
-@media (max-width: 480px) {
-    .slide-content {
-        width: 240px;
-        height: 240px;
-        margin: 0 10px;
-        border-radius: 8px;
-        margin-top: -270px;
-    }
-    .slide-content img {
-        border-radius: 8px; 
-    }
-}
-*/
-
 @media (max-width: 480px) {
     .custom-carousel-wrapper {
         margin: 20px 0; 
@@ -152,6 +137,41 @@ body {
     }
 }
 
+
+/* Поддержка тг Тани */
+.support-text {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: -5px 0;
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.support-green {
+    color: #d0ff00;
+}
+
+.support-link {
+    color: #d0ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+}
+
+.support-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(208, 255, 0, 0.7);
+}
+
+@media (max-width: 480px) {
+    .support-text {
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin: -10px 0;
+    }
+}
 
 /* ----------------------------------------  Меню */
 /* Кнопка меню (3 точки) */
@@ -1120,4 +1140,5 @@ body {
         transform: scale(0.85); 
     }
 }
+
 
